@@ -44,7 +44,8 @@ router.post(
     })
     ,async (req,res)=>{
     req.flash("success","Welcome back to WanderLust, You are Now Logged in");
-    res.redirect(res.locals.redirectUrl);
+    let redirectUrl=res.locals.redirectUrl || "/listings";
+    res.redirect(redirectUrl);
 
 });
 
